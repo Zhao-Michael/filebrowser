@@ -87,7 +87,13 @@
             <span>{{ size }}%</span>
           </div>
         </div>
-        <ExtendedImage v-else-if="fileStore.req?.type == 'image'" :src="raw" />
+        <ExtendedImage
+          v-else-if="fileStore.req?.type == 'image'"
+          :src="raw"
+          :moveDisabledTime="0"
+          :classList="[]"
+          :zoomStep="1"
+        />
         <audio
           v-else-if="fileStore.req?.type == 'audio'"
           ref="player"
